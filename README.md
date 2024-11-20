@@ -1,4 +1,4 @@
-# Roughness predcition using Deee Neural Network
+# Roughness predcition using Deep Neural Network
 
 Group member: 
 - Tran Huy Hoang Anh
