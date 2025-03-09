@@ -1,16 +1,21 @@
 % parameters for dynamical model
+kf = 0.1;
+
 num1 = -20.15;
 num0 = 550.5;
 de2 = 1;
 de1 = 36.7;
 de0 = 564.5;
 
-rg = 1.0;
+rg = 0.005;
 
-ke = 1.0;
-ks = 1.0;
-cf = 1.0;
-M = 1.0;
+ke = 3.0 * 1e3;
+ks = 1.5 * 1e3;
+cf = 0.01 * 1e3;
+% ke = 3.0;
+% ks = 1.5;
+% cf = 0.01;
+M = 2.9;
 
 
 % tune PID controller

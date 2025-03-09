@@ -1,0 +1,7 @@
+
+# simulink build artifacts and cache files
+*.slxc
+**/simulink_cache.xml
+
+# matlab workspace data
+*.mat 
