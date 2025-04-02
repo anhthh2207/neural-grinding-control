@@ -19,10 +19,21 @@ M = 2.9;
 
 
 % tune PID controller
-speedLoop = tf([num1, num0], [de2, de1, de0]);
+speed_loop = tf([num1, num0], [de2, de1, de0]);
 rgOverS = tf(rg, [1, 0]);
-endEffector = tf([ke*cf, ke*ks], [M, cf, (ke + ks)]);
+end_effector = tf([ke*cf, ke*ks], [M, cf, (ke + ks)]);
 
-G = speedLoop * rgOverS * endEffector;
+G = speed_loop * rgOverS * end_effector;
 
 C = pidtune(G, 'PID');
+
+% bode plot for the speed loop 
+figure();
+bode(end_effector); 
+grid on;
+title('Bode Plot of End Effector');
+
+figure();
+bode(G); 
+grid on;
+title('Bode Plot of Open-loop system');
