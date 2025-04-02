@@ -10,41 +10,61 @@ de0 = 564.5;
 rg = 0.005;
 
 ke = 3.0 * 1e3;
-ks = 1.5 * 1e3;
+ks = [0.5, 1.5, 6.0]* 1e3;
 cf = 0.01 * 1e3;
+
 M = 2.9;
 
 
-% tune PID controller
+% trasfer functions of the system
 speed_loop = tf([num1, num0], [de2, de1, de0]);
 rgOverS = tf(rg, [1, 0]);
-end_effector = tf([ke*cf, ke*ks], [M, cf, (ke + ks)]);
-
-G = speed_loop * rgOverS * end_effector;
 
 
-% bode plot for the speed loop 
+colors = ['r', 'b', 'g'];
+
+
+% bode plot for the end effector
 figure();
-bode(end_effector); 
-grid on;
+end_effector = [];
+
+for i = 1:length(ks)
+    end_effector = [end_effector, tf([ke*cf, ke*ks(i)], [M, cf, (ke + ks(i))])];
+end
+
+bodeplot(end_effector(1), 'r', end_effector(2), 'b' , end_effector(3), 'g');
+legend('ks = 0.5N/mm','ks = 1.5N/mm', 'ks = 6N/mm');
 title('Bode Plot of End Effector');
+grid on;
+xlabel('Frequency (Hz)');
 saveas(gcf, 'assets/bode_end_effector.png');
 
 
-% bode plot for the open-loop system
+% Nyquist diagram for open-loop system
 figure();
-bode(G); 
+G = [];
+
+for i = 1:length(ks)
+    G = [G, speed_loop * rgOverS * end_effector(i)];
+end
+
+nyquist(G(1), 'r', G(2), 'b' , G(3), 'g');
+legend('ks = 0.5N/mm','ks = 1.5N/mm', 'ks = 6N/mm');
+title('Nyquist Diagram of the Open-Loop System');
 grid on;
+xlabel('Frequency (Hz)');
+saveas(gcf, 'assets/nyquist_open_loop.png')
+
+
+% bode plot for the open-loop system
+bodeplot(G(1), 'r', G(2), 'b' , G(3), 'g');
+legend('ks = 0.5N/mm','ks = 1.5N/mm', 'ks = 6N/mm');
 title('Bode Plot of Open-loop system');
+grid on;
+xlabel('Frequency (Hz)');
 saveas(gcf, 'assets/bode_open_loop.png');
 
 
-% Nyquist diagram 
-figure();
-nyquist(G);
-grid on;
-title('Nyquist Diagram of the Open-Loop System');
-saveas(gcf, 'assets/nyquist_open_loop.png')
 
 
 
