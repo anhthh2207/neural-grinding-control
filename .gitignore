@@ -6,3 +6,7 @@ slprj/
 
 # matlab workspace data
 *.mat 
+
+# Ignore autosave and .asv files
+*.asv
+*.autosave
