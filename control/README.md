@@ -14,3 +14,13 @@ $$\frac{F_0(s)}{X_m(s)} = \frac{K_e K_s}{M s^2 + K_e + K_s}$$
 - Modify the parameters in the config.m file as needed, then execute the script. This will load the parameters into the workspace for use with the Simulink model.
 - The controller is automatically tuned using MATLAB's built-in pidtune function. The optimized gain values are then extracted and applied to the Simulink model.
 - Finally, run the simulation in Simulink to observe the system's response.
+
+
+
+### TODO
+replace Ks, ke, M, Cf by emprical number
+
+For optimized controller:
+- split controller into seperated blocks: https://www.youtube.com/watch?v=N-pQUwWfa8Y
+
+- more tutorial: https://www.youtube.com/watch?v=S5C_z1nVaSg&t=330s
