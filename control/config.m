@@ -24,16 +24,3 @@ rgOverS = tf(rg, [1, 0]);
 end_effector = tf([ke*cf, ke*ks], [M, cf, (ke + ks)]);
 
 G = speed_loop * rgOverS * end_effector;
-
-C = pidtune(G, 'PID');
-
-% bode plot for the speed loop 
-figure();
-bode(end_effector); 
-grid on;
-title('Bode Plot of End Effector');
-
-figure();
-bode(G); 
-grid on;
-title('Bode Plot of Open-loop system');
