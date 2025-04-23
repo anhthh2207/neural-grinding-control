@@ -31,7 +31,7 @@ pid_ga
 ```
 
 
-## 3. Running intruction:
+## 3. Simulink model:
 - Modify the parameters in the config.m file as needed, then execute the script. This will load the parameters into the workspace for use with the Simulink model.
 - The controller is automatically tuned using MATLAB's built-in pidtune function. The optimized gain values are then extracted and applied to the Simulink model.
 - Finally, run the simulation in Simulink to observe the system's response.
