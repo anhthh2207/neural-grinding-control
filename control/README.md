@@ -30,7 +30,7 @@ To run Genetic Algorithm (GA) tuner (less stable)
 pid_ga
 ```
 
-To run RL tuner, refer to the [rl_tuner](./rl_tuner/).
+To run RL tuner, refer to the [rl_tuner](./rl_tuner/) and run the live scripts `rl_tuner.mlx`.
 
 
 ## 3. Simulink model:

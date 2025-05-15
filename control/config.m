@@ -18,7 +18,7 @@ cf = 0.01 * 1e3;
 M = 2.9;
 
 
-% tune PID controller
+% define transfer function for the system
 speed_loop = tf([num1, num0], [de2, de1, de0]);
 rgOverS = tf(rg, [1, 0]);
 end_effector = tf([ke*cf, ke*ks], [M, cf, (ke + ks)]);
