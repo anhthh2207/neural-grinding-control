@@ -30,7 +30,7 @@ To run Genetic Algorithm (GA) tuner (less stable)
 pid_ga
 ```
 
-To run RL tuner, refer to the [rl_tuner](./rl_tuner/) and run the live scripts `rl_tuner.mlx`.
+To try Reinforcement Learning (RL) tuner, run the live scripts [rl_tuner.mlx](rl_tuner/rl_tuner.mlx).
 
 
 ## 3. Simulink model:
@@ -41,3 +41,6 @@ To run RL tuner, refer to the [rl_tuner](./rl_tuner/) and run the live scripts `
 ### TODO
 - [ ] Finetune GA tuner (more interations, more samples, abitrary reference waveform)
 - [ ] Finetune RL agent.
+    - [ ] Larger networks
+    - [ ] Dynamics learning rate
+    - [ ] Balance exploration-exploitation

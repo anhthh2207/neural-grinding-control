@@ -5,7 +5,8 @@ slprj/
 
 
 # matlab workspace data
-*.mat 
+*.mat
+!ControlSystemTunerSession.mat
 
 # Ignore autosave and .asv files
 *.asv
