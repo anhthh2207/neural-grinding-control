@@ -1,5 +1,3 @@
-clc; clear;
-
 %% problem setup
 run('config.m')
 
@@ -23,6 +21,10 @@ T = feedback(C*G, 1);
 
 figure;
 step(T, 0:0.01:5);
-title('Step Response with Optimized PID');
+title('Step Response with GA optimized PID');
 xlabel('Time (s)');
 ylabel('Output');
+
+Kp_ga = Kp_opt;
+Ki_ga = Ki_opt;
+Kd_ga = Kd_opt;

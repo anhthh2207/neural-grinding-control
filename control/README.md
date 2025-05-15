@@ -19,7 +19,7 @@ From these 2 equations, the transfer funciton in Laplace domain
 $$\frac{F_0(s)}{X_m(s)} = \frac{K_e C_fs + K_e K_s}{M s^2 + C_f s + K_e + K_s}$$
 
 
-## 2. PID tuner 
+## 2. Usage
 To run built-in MATLAB tuner
 ```matlab
 pid_tuner
@@ -30,13 +30,14 @@ To run Genetic Algorithm (GA) tuner (less stable)
 pid_ga
 ```
 
+To run RL tuner, refer to the [rl_tuner](./rl_tuner/).
+
 
 ## 3. Simulink model:
-- Modify the parameters in the config.m file as needed, then execute the script. This will load the parameters into the workspace for use with the Simulink model.
+- Modify the parameters in the `config.m` file as needed, then execute the script. This will load the parameters into the workspace for use with the Simulink model.
 - The controller is automatically tuned using MATLAB's built-in pidtune function. The optimized gain values are then extracted and applied to the Simulink model.
 - Finally, run the simulation in Simulink to observe the system's response.
 
 ### TODO
-- [x] GA tuner
 - [ ] Finetune GA tuner (more interations, more samples, abitrary reference waveform)
-- [ ] ML to tune PID.
+- [ ] Finetune RL agent.

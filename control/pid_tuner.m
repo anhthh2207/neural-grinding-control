@@ -1,5 +1,3 @@
-clc; clear all;
-
 run('config.m')
 
 C = pidtune(G, 'PID');
@@ -11,6 +9,10 @@ T = feedback(C*G, 1);
 
 figure;
 step(T, 0:0.01:5);
-title('Step Response with Auto-tuned PID');
+title('Step Response with Built-in Tuner PID');
 xlabel('Time (s)');
 ylabel('Output');
+
+Kp_t = C.Kp;
+Ki_t = C.Ki;
+Kd_t = C.Kd;
