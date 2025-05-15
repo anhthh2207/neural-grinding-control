@@ -1,7 +1,7 @@
 clc; clear all;
 
 run("pid_tuner.m");
-run("pid_ga.m");
+run("ga_tuner/pid_ga.m");
 
 C_ga = pid(Kp_ga, Ki_ga, Kd_ga);
 C_t = pid(Kp_t, Ki_t, Kd_t);
