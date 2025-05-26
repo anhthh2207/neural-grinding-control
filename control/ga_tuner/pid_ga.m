@@ -1,5 +1,5 @@
 %% problem setup
-run('../config.m')
+run('config.m')
 
 %% optimiation problem setup
 lb = [0 0 0];
