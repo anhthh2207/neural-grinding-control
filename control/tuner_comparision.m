@@ -13,6 +13,10 @@ Kp_t=9.6721; Ki_t=6.3267; Kd_t=0.0000;
 Kp_ga=10.785; Ki_ga=0.571; Kd_ga=0.238;
 Kp_rl=8.0356; Ki_rl=0.0188; Kd_rl=0;
 
+% Kp_t=11.1069; Ki_t=10.7184; Kd_t=0.0000;
+% Kp_ga=10.225; Ki_ga=0.646; Kd_ga=0.344;
+% Kp_rl=9.0985; Ki_rl=3.5489; Kd_rl=0;
+
 
 
 C_ga = pid(Kp_ga, Ki_ga, Kd_ga);

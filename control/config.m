@@ -52,11 +52,11 @@ de0 = 564.5; % 	Inertia + control bandwidth — affects overshoot and natural fr
 rg = 0.002; % ACTUAL NUMBER
 
 % TOOL STIFFNESS. How the tool itself compreses under graiding force.
-% Appear in the forcce model, as tool displacement. 
-% To measure, press tooll into wall, and measure F/delta_X (N/m)
-% ke = 3.0 * 1e3;
+% Appear in the forcce model, as tool displacement. To measure, press tooll
+% into wall, and measure F/delta_X (N/m) ke = 3.0 * 1e3;
 
-ke = 3.0 * 1e3; %base don paper, metal wheel are 45.6
+ke = 3 * 1e3; %base on paper, metal wheel are 45.6
+% e = 45.6 * 1e3; %base on paper, metal wheel are 45.6
 
 %SPRING STIFFNESS -> The stiffness of the series spring between motor and tool.
 % Hang known weight F -> measure compression delta x -> ks = F/delta_x (N/m)
