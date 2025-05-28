@@ -1,9 +1,14 @@
 clc; clear all;
 
 run("config.m")
-Kp_t=1.0105; Ki_t=0.5955; Kd_t=0.0170;
-Kp_ga=1.453; Ki_ga=0.129; Kd_ga=0.052;
-Kp_rl=0.8198; Ki_rl=1.0633; Kd_rl=0;
+% Kp_t=1.0105; Ki_t=0.5955; Kd_t=0.0170;
+% Kp_ga=1.453; Ki_ga=0.129; Kd_ga=0.052;
+% Kp_rl=0.8198; Ki_rl=1.0633; Kd_rl=0;
+
+Kp_t=9.6721; Ki_t=6.3267; Kd_t=0.0000;
+Kp_ga=10.785; Ki_ga=0.571; Kd_ga=0.238;
+Kp_rl=6.2212; Ki_rl=7.6554 * 1e-4; Kd_rl=0;
+
 
 
 C_ga = pid(Kp_ga, Ki_ga, Kd_ga);
