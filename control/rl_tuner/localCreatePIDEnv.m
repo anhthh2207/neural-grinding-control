@@ -2,7 +2,7 @@ function [env,obsInfo,actInfo] = localCreatePIDEnv(mdl)
 
 % Define the observation specification obsInfo 
 % and the action specification actInfo.
-obsInfo = rlNumericSpec([2 1]);
+obsInfo = rlNumericSpec([3 1]);
 obsInfo.Name = 'observations';
 obsInfo.Description = 'integrated error and error';
 

@@ -5,7 +5,7 @@ run('../config.m')
 lb = [0 0 0];
 ub = [1000 1000 1000];
 
-opts = optimoptions('ga','Display','iter','PopulationSize',30,'MaxGenerations',40);
+opts = optimoptions('ga','Display','iter','PopulationSize',100,'MaxGenerations',100);
 [x, fval] = ga(@(x) pid_cost(x, G), 3, [], [], [], [], lb, ub, [], opts);
 
 Kp_opt = x(1);
@@ -28,3 +28,8 @@ ylabel('Output');
 Kp_ga = Kp_opt;
 Ki_ga = Ki_opt;
 Kd_ga = Kd_opt;
+
+
+L = C * G;
+[GM, PM, ~, ~] = margin(L);
+
