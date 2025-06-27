@@ -41,6 +41,10 @@ To find the data and evaluate end-effector's performed trajectory, refer to, vis
 ```python
 python eval_trajectory.py
 ```
+Make sure you install all required package by run the following command 
+```bash
+pip install -r requirements.txt 
+```
 
 
 ## 3. Simulink model:
