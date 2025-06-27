@@ -1,0 +1,28 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (( 'STEP AP214' ),
+    '1' );
+FILE_NAME ('Bosch_GRO_12V-35_Halter_Holder.STEP',
+    '2025-05-05T02:57:22',
+    ( '' ),
+    ( '' ),
+    'SwSTEP 2.0',
+    'SolidWorks 2023',
+    '' );
+FILE_SCHEMA (( 'AUTOMOTIVE_DESIGN' ));
+ENDSEC;
+
+DATA;
+#1 = PRODUCT_DEFINITION_CONTEXT ( 'detailed design', #2, 'design' ) ;
+#2 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+#3 = PRODUCT ( 'Bosch_GRO_12V-35_Halter_Holder', 'Bosch_GRO_12V-35_Halter_Holder', '', ( #9 ) ) ;
+#4 = PRODUCT_DEFINITION_SHAPE ( 'NONE', 'NONE',  #6 ) ;
+#5 = PRODUCT_RELATED_PRODUCT_CATEGORY ( 'part', '', ( #3 ) ) ;
+#6 = PRODUCT_DEFINITION ( 'UNKNOWN', '', #10, #1 ) ;
+#7 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+#8 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #7 ) ;
+#9 = PRODUCT_CONTEXT ( 'NONE', #7, 'mechanical' ) ;
+#10 = PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE ( 'ANY', '', #3, .NOT_KNOWN. ) ;
+#11 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #2 ) ;
+ENDSEC;
+END-ISO-10303-21;
