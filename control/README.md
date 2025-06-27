@@ -32,15 +32,25 @@ pid_ga
 
 To try Reinforcement Learning (RL) tuner, run the live scripts [rl_tuner.mlx](rl_tuner/rl_tuner.mlx).
 
+To run the experiment comparing the responses of the three PID controllers, use the command:
+```matlab
+tuner_comparison
+```
+
+To find the data and evaluate end-effector's performed trajectory, refer to, visit [imu_experiement](imu_experiement)
+```python
+python eval_trajectory.py
+```
+
 
 ## 3. Simulink model:
 - Modify the parameters in the `config.m` file as needed, then execute the script. This will load the parameters into the workspace for use with the Simulink model.
 - The controller is automatically tuned using MATLAB's built-in pidtune function. The optimized gain values are then extracted and applied to the Simulink model.
 - Finally, run the simulation in Simulink to observe the system's response.
 
-### TODO
+<!-- ### TODO
 - [ ] Finetune GA tuner (more interations, more samples, abitrary reference waveform)
 - [ ] Finetune RL agent.
     - [ ] Larger networks
     - [ ] Dynamics learning rate
-    - [ ] Balance exploration-exploitation
+    - [ ] Balance exploration-exploitation -->
