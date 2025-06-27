@@ -1,8 +1,23 @@
+
+clc; clear all;
+
+run("config.m")
+Kp_t=9.6721; Ki_t=6.3267; Kd_t=0.0000;
+Kp_ga=10.785; Ki_ga=0.571; Kd_ga=0.238;
+Kp_rl=8.0356; Ki_rl=0.0188; Kd_rl=0;
+
+
+
+C_ga = pid(Kp_ga, Ki_ga, Kd_ga);
+C_t = pid(Kp_t, Ki_t, Kd_t);
+C_rl = pid(Kp_rl, Ki_rl, Kd_rl); 
+
+
 % time
 t = 0:0.01:10;
-fs = 1 / (t(2) - t(1)); % Sampling frequency
+fs = 1 / (t(2) - t(1)); 
 
-% random impulse
+% random impulse signal
 rand_impulse_signal = zeros(size(t));
 n_spikes = 10;                                 
 min_width = round(0.4 * fs);                   
@@ -14,31 +29,27 @@ for k = 1:n_spikes
     rand_impulse_signal(idx : idx + width - 1) = rand() * (1.5 + rand());
 end
 
-
-% piecewise signal
+% piecewise step signal
 step_ladder = zeros(size(t));
 step_ladder(t > 2) = 2;
 step_ladder(t > 4) = -3;
 step_ladder(t > 6) = 4;
 step_ladder(t > 8) = -1;
 
-
-% set frequency for periodic signal
+% frequency for periodic signals
 f = 0.25; % Hz 
 
-
+% define signals
 signals = {
     'Step',             ones(size(t));
-    'Impulse',          impulse_signal;
+    'Impulse',          rand_impulse_signal;
     'Sawtooth',         5 * sawtooth(2*pi*f*t);
     'Sine',             5 * sin(2*pi*f*t);
     'ExpSine',          exp(-0.2 * t) .* sin(2*pi*0.5*t);
     'RandomImpulseNoise', rand_impulse_signal;
-    'PiecewiseStep',    step_ladder
+    'PiecewiseStep',    step_ladder;
     'Composite',        5 * sin(t) + 8 * sin(3*t + 2) + 0.2 * t .* exp(2 * cos(4*t))
 };
-
-
 
 
 for i = 1:size(signals,1)
@@ -67,7 +78,7 @@ for i = 1:size(signals,1)
     grid on;
     set(gca, 'FontSize', 14);
     
-    %  MSE
+    % MSE
     mse_t  = mean((r - y_t').^2);
     mse_ga = mean((r - y_ga').^2);
     mse_rl = mean((r - y_rl').^2);
